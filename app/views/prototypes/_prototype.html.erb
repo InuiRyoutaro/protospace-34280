@@ -1,12 +1,16 @@
 <div class="card">
 <%= link_to prototype_path(prototype.id),method: :get do %>
   <%= image_tag prototype.image, class: 'card__img' if prototype.image.attached? %>
-  <div class="card__body">
-    <%= link_to "title", root_path, class: :card__title%>
-    <p class="card__summary">
-      <%= "catch_copy" %> 
-    </p>
-    <%= link_to "user_id", root_path, class: :card__user %>
-  </div>
 <% end %>
+  <div class="card__body">
+    <%#= link_to "プロトタイプのタイトル", root_path, class: :card__title%>
+    <%= prototype.title %> 
+    <p class="card__summary">
+      <%= prototype.catch_copy %> 
+    </p>
+    <%# if current_user %>
+        <%= link_to prototype.user.name, user_path(prototype.user), class: :card__user%>
+    <%# end %>
+  </div>
+
 </div>
