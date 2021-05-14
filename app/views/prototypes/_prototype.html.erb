@@ -3,8 +3,8 @@
   <%= image_tag prototype.image, class: 'card__img' if prototype.image.attached? %>
 <% end %>
   <div class="card__body">
-    <%#= link_to "プロトタイプのタイトル", root_path, class: :card__title%>
-    <%= prototype.title %> 
+    <%= link_to prototype.title, prototype_path(prototype.id), class: :card__title%>
+    <%#= prototype.title %> 
     <p class="card__summary">
       <%= prototype.catch_copy %> 
     </p>
